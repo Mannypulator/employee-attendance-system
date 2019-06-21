@@ -125,7 +125,23 @@ $(document).ready(function () {
 		$("#updateForm").trigger("reset");
 		$("#updateForm").toggle();
 		e.preventDefault();
-	});
+    });
+    function deleteEmployee(num) {
+		$.ajax({
+			url: 'http://localhost:3000/employees/' + num,
+			method: 'DELETE',
+			dataType: 'json',
+			success: function (data) {
+				alert('employee deleted successfully!')
+				console.log(data);
+				getEmployees();
+			},
+			error:function(){
+				alert('error deleting employee');
+			}
+
+		});
+	}
 
 
 });
