@@ -33,7 +33,24 @@ $(document).ready(function () {
 				alert('error loading employees')
 			}
 		});
-    }	
+    }
+    function getOneEmployee(num) {
+		$.ajax({
+			url: 'http://localhost:3000/employees/' + num,
+			method: 'GET',
+			dataType: 'json',
+			success: function (data) {
+				$($("#updateForm")[0].updateEmpId).val(data.id);
+				$($("#updateForm")[0].updateName).val(data.name);
+				$($("#updateForm")[0].updateSubject).val(data.subject);
+				$($("#updateForm")[0].updateTimeIn).val(data.time_in);
+				$($("#updateForm")[0].updateTimeOut).val(data.time_out);
+				$("#updateForm").show();
+			},
+			error: function(){
+				alert ('error getting one employee')
+			}
+		});	
     $("#submitEmployee").on("click", function (e) {
 		let data = {
 			id: $($("#newForm")[0].empId).val(),
