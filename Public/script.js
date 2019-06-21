@@ -65,6 +65,22 @@ $(document).ready(function () {
 			}
 
 		});
-	}
+    }
+    function putEmployee(num, data) {
+        num=($("#updateEmpId").val())
+            $.ajax({
+                url: 'http://localhost:3000/employees/'+num,
+                method: 'PUT',
+                dataType: 'json',
+                data: data,
+                success: function (data) {
+                    console.log(data);
+                    getEmployees();
+                },
+                error: function() {
+                    alert('error updating employee');
+                }
+            });
+        }
 
 });
