@@ -34,6 +34,21 @@ $(document).ready(function () {
 			}
 		});
     }	
+    $("#submitEmployee").on("click", function (e) {
+		let data = {
+			id: $($("#newForm")[0].empId).val(),
+			name: $($("#newForm")[0].name).val(),
+			subject: $($("#newForm")[0].subject).val(),
+			time_in: $($("#newForm")[0].timeIn).val(),
+			time_out: $($("#newForm")[0].timeOut).val()
+
+		}
+
+		postEmployee(data);
+		$("#newForm").trigger("reset");
+		$("#newForm").toggle();
+		e.preventDefault();
+	});
     function postEmployee(data) {
 		$.ajax({
 			url: 'http://localhost:3000/employees',
