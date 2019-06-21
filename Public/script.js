@@ -27,7 +27,8 @@ $(document).ready(function () {
 											<i class = "far fa-edit editEmp" data-empid="` + employee.id + `"></i>
 											<i class = "fas fa-trash deleteEmp" data-empid="` + employee.id + `"></i>
 											`)));
-				});
+                });
+                loadButtons();
 			},
 			error: function(){
 				alert('error loading employees')
@@ -84,6 +85,16 @@ $(document).ready(function () {
 
 		});
     }
+    function loadButtons() {
+		$(".editEmp").click(function (e) {
+			getOneEmployee($($(this)[0]).data("empid"));
+			e.preventDefault();
+		});
+		$(".deleteEmp").click(function (e) {
+			deleteEmployee($($(this)[0]).data("empid"));
+			e.preventDefault();
+		});
+	}
     function putEmployee(num, data) {
         num=($("#updateEmpId").val())
             $.ajax({
