@@ -50,7 +50,8 @@ $(document).ready(function () {
 			error: function(){
 				alert ('error getting one employee')
 			}
-		});	
+        });
+    }	
     $("#submitEmployee").on("click", function (e) {
 		let data = {
 			id: $($("#newForm")[0].empId).val(),
@@ -98,6 +99,22 @@ $(document).ready(function () {
                     alert('error updating employee');
                 }
             });
-        }
+    }
+    $("#updateEmployee").on("click", function (e) {
+		let data = {
+			id: $($("#updateForm")[0].updateEmpId).val(),
+			name: $($("#updateForm")[0].updateName).val(),
+			subject: $($("#updateForm")[0].updateSubject).val(),
+			time_in: $($("#updateForm")[0].updateTimeIn).val(),
+			time_out: $($("#updateForm")[0].updateTimeOut).val()
+
+		}
+
+		putEmployee($($("#updateForm")[0].empId).val(), data);
+		$("#updateForm").trigger("reset");
+		$("#updateForm").toggle();
+		e.preventDefault();
+	});
+
 
 });
