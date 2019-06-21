@@ -28,11 +28,28 @@ $(document).ready(function () {
 											<i class = "fas fa-trash deleteEmp" data-empid="` + employee.id + `"></i>
 											`)));
 				});
-				loadButtons();
 			},
 			error: function(){
 				alert('error loading employees')
 			}
 		});
     }	
+    function postEmployee(data) {
+		$.ajax({
+			url: 'http://localhost:3000/employees',
+			method: 'POST',
+			dataType: 'json',
+			data: data,
+			success: function (data) {
+				console.log(data);
+				//the function below is called to refresh the table
+				getEmployees();
+			},
+			error:function(){
+				alert('error adding employee')
+			}
+
+		});
+	}
+
 });
