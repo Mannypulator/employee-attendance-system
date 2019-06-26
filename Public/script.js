@@ -34,7 +34,39 @@ $(document).ready(function () {
 				alert('error loading employees')
 			}
 		});
-    }
+	}
+	//function searchEmployee() {
+		$("#search-btn").unbind().click(function (e) {
+			// $('#employeeBody').html('');
+			var searchEmployee= $("#search-box").val();
+			console.log(searchEmployee);
+			
+				$.ajax({
+					url: 'http://localhost:3000/employees/?name=' + searchEmployee,
+					method: 'GET',
+					dataType: 'json',
+					success: function (data) {
+						$(data).each(function (i, employee) {
+							console.log(employee.time_in);
+							$('#employeeBody').html(`<tr>
+							<td>${employee.id}</td>
+							<td>${employee.name}</td>
+							<td>${employee.subject}</td>
+							<td>${employee.time_in}</td>
+							<td>${employee.time_out}</td>
+							<td><i class = "far fa-edit editEmp" data-empid="  ${employee.id}  "></i>
+							<i class = "fas fa-trash deleteEmp" data-empid="  ${employee.id}  "></i></td>
+							</tr>`)
+						});
+						
+					},
+					error: function(){
+						alert ('error getting the employee')
+					}
+				});
+			
+		});
+	// }
     function getOneEmployee(num) {
 		$.ajax({
 			url: 'http://localhost:3000/employees/' + num,
