@@ -1,0 +1,32 @@
+{
+    "employees": [
+      {
+        "id": 1,
+        "name": "Samuel Lucky bangalee",
+        "subject": "chemistry(Inorganic Chemistry",
+        "time_in": "8:00AM",
+        "time_out": "2:30PM"
+      },
+      {
+        "id": 2,
+        "name": "Jennifer Umoru",
+        "subject": "Biology",
+        "time_in": "8:00AM",
+        "time_out": "2:30PM"
+      },
+      {
+        "id": "3",
+        "name": "Emmanuel Imion",
+        "subject": "Mathematics/ Chemsitry(Organic Chemsitry)",
+        "time_in": "8:45AM",
+        "time_out": "4:00PM"
+      },
+      {
+        "id": "24",
+        "name": "Funmilayo Daniel Odede",
+        "subject": "English Language",
+        "time_in": "7:00AM",
+        "time_out": "4:00PM"
+      }
+    ]
+  }

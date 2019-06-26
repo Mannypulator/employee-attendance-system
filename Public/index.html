@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>DEC-COLLEGE EMPLOYEE ATTENDANCE</h1>
+		<button id="newEmpBtn" class="btn btn-primary btn-block">New Employee</button><br /><br />
+		<form id="newForm">
+			<div class="form-group row">
+				<label for="empId" class="col-sm-2 col-form-label">Serial Number</label>
+				<div class="col-sm-10">
+					<input type="number" class="form-control" id="empId" placeholder="Serial Number">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="name" class="col-sm-2 col-form-label">Name</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="name" placeholder="Name">
+				</div>
+
+			</div>
+			<div class="form-group row">
+				<label for="subject" class="col-sm-2 col-form-label">Subject</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="subject" placeholder="subject">
+				</div>
+
+			</div>
+			<div class="form-group row">
+				<label for="timeIn" class="col-sm-2 col-form-label">Time In</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="timeIn" placeholder="Time In">
+				</div>
+
+			</div>
+			<div class="form-group row">
+				<label for="timeOut" class="col-sm-2 col-form-label">Time Out</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="timeOut" placeholder="Time Out">
+				</div>
+			</div>
+			<button id="submitEmployee" type="submit" class="btn btn-primary">Add New Employee</button>
+		</form>
+		<div id="updateFormDiv">
+			<form id="updateForm">
+				<div class="form-group row">
+					<label for="updateEmpId" class="col-sm-2 col-form-label">Serial Number</label>
+					<div class="col-sm-10">
+						<input type="number" class="form-control" id="updateEmpId" placeholder="Serial Number">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="updateName" class="col-sm-2 col-form-label">Name</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="updateName" placeholder="Name">
+					</div>
+
+				</div>
+				<div class="form-group row">
+					<label for="updateSubject" class="col-sm-2 col-form-label">Subject</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="updateSubject" placeholder="Subject">
+					</div>
+
+				</div>
+				<div class="form-group row">
+					<label for="updateTimeIn" class="col-sm-2 col-form-label">Time In</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="updateTimeIn" placeholder="Time In">
+					</div>
+
+				</div>
+				<div class="form-group row">
+					<label for="updateTimeOut" class="col-sm-2 col-form-label">Time Out</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="updateTimeOut" placeholder="Time Out">
+					</div>
+				</div>
+				<button id="updateEmployee" type="submit" class="btn btn-primary">Update Employee</button>
+			</form>
+			
+		</div>
+		<div id="searchEmp">
+			<input type="text"  class="form-control" name="search" id="search-box" placeholder="Search Employee Details" />
+			<button id="search-btn" class="btn btn-primary">Search</button>
+		</div>
+		<table id="employeeTable" class="table table-bordered table-hover">
+			<thead>
+				<th>Serial Number</th>
+				<th>Full Name</th>
+				<th>Subject</th>
+				<th>Time In</th>
+				<th>Time Out</th>
+				<th>Control</th>
+			</thead>
+			<tbody id="employeeBody"></tbody>
+		</table>
+	</div>
+</body>
+
+</html>
