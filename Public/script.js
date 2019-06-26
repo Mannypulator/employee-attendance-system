@@ -35,7 +35,7 @@ $(document).ready(function () {
 			}
 		});
 	}
-	// function searchEmployee() {
+	//function searchEmployee() {
 		$("#search-btn").unbind().click(function (e) {
 			// $('#employeeBody').html('');
 			var searchEmployee= $("#search-box").val();
@@ -65,28 +65,6 @@ $(document).ready(function () {
 					}
 				});
 			
-			// var regex = new RegExp(searchEmployee, "i");
-			// $.ajax('http://localhost:3000/employees?', function (data) {
-				
-
-			// 	// $(data).each(function (key, value) {
-			// 	// 	if (value.name.search(regex) != -1) {
-			// 	// 		$('#employeeBody').append($("<tr>")
-			// 	// 			.append($("<td>").append(employee.id))
-			// 	// 			.append($("<td>").append(employee.name))
-			// 	// 			.append($("<td>").append(employee.subject))
-			// 	// 			.append($("<td>").append(employee.time_in))
-			// 	// 			.append($("<td>").append(employee.time_out))
-			// 	// 			.append($("<td>").append(`
-				// 							<i class = "far fa-edit editEmp" data-empid="` + employee.id + `"></i>
-				// 							<i class = "fas fa-trash deleteEmp" data-empid="` + employee.id + `"></i>
-				// 							`)));
-
-
-			// 	// 	}
-			// 	// });
-
-			// });
 		});
 	// }
     function getOneEmployee(num) {
